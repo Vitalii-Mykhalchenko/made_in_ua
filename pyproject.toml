@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "made-in-ua"
+version = "0.1.0"
+description = ""
+authors = ["Vitalii-Mykhalchenko <swimming580@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+telebot = "^0.0.5"
+pyzbar = "^0.1.9"
+pillow = "^11.1.0"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
