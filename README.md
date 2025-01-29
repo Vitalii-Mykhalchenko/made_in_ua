@@ -39,12 +39,8 @@ Store this API key securely.
 Replace the API in the bot = telebot.TeleBot("API") line with your actual API key.
 
 3. Prepare the database
-Create a products.csv file with product information. The file should be formatted with the following columns:
+Create a products.csv file with product information.
 
-Штрих-код: Barcode number (this is what the bot will search for).
-Назва товару: Product name.
-
-## Usage
 
 ## Commands and Actions
 
