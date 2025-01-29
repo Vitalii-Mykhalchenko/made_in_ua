@@ -21,74 +21,50 @@ Before running the bot, make sure you have the following dependencies installed:
 To install the required libraries, run:
 
 ```bash
-poetry add pyzbar pillow pandas python-telegram-bot
+pip install pyzbar pillow pandas python-telegram-bot
 
 
-## Setup
 
-### 1. Get the Telegram Bot API key
 
+Setup
+1. Get the Telegram Bot API key
 Create a bot on Telegram by following these steps:
 
-1. Open Telegram and search for the **BotFather**.
-2. Use the `/newbot` command to create a new bot and get an API key.
-3. Store this API key securely.
+Open Telegram and search for the BotFather.
+Use the /newbot command to create a new bot and get an API key.
+Store this API key securely.
+2. Configure the bot
+Replace the API in the bot = telebot.TeleBot("API") line with your actual API key.
 
----
+3. Prepare the database
+Create a products.csv file with product information. The file should be formatted with the following columns:
 
-### 2. Configure the bot
+Штрих-код: Barcode number (this is what the bot will search for).
+Назва товару: Product name.
 
-Replace the API in the following line with your actual API key:
+Usage
+Commands and Actions
+/start: When the bot is started, it greets the user and shows the available options:
 
-```python
-bot = telebot.TeleBot("API")
+Upload a photo: Send a photo that contains a barcode.
+Enter manually: Enter a barcode manually.
+Help: Get instructions on how to use the bot.
+Upload a photo: Send a photo with a barcode, and the bot will try to detect the barcode and search for the product in the database.
 
+Enter manually: Type in a barcode, and the bot will search for the product in the database.
 
+Help: Get detailed instructions on how to use the bot.
 
-## Usage
-
-### Commands and Actions
-
-#### `/start`
-When the bot is started, it greets the user and shows the available options:
-
-- **Upload a photo**: Send a photo that contains a barcode.
-- **Enter manually**: Enter a barcode manually.
-- **Help**: Get instructions on how to use the bot.
-
----
-
-#### **Upload a photo**  
-Send a photo with a barcode, and the bot will try to detect the barcode and search for the product in the database.
-
----
-
-#### **Enter manually**  
-Type in a barcode, and the bot will search for the product in the database.
-
----
-
-#### **Help**  
-Get detailed instructions on how to use the bot.
-
----
-
-### Example Usage
-
-#### **User starts the bot**  
+Example Usage
+User starts the bot:
 The bot greets the user and provides options to either upload a photo, enter a barcode manually, or request help.
 
----
-
-#### **User uploads a photo**  
+User uploads a photo:
 The bot will decode any valid barcode (EAN13, EAN8, UPC) from the image and look for the product in the database. If found, it returns the product name.
 
----
-
-#### **User enters a barcode manually**  
+User enters a barcode manually:
 The bot searches the product database for the entered barcode and responds with the product information.
 
----
-
-#### **User requests help**  
+User requests help:
 The bot provides instructions on how to use the available commands.
+
