@@ -23,6 +23,7 @@ To install the required libraries, run:
 ```bash
 pip install pyzbar pillow pandas python-telegram-bot
 
+```
 
 
 
